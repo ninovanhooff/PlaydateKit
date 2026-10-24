@@ -102,7 +102,7 @@ import PackagePlugin
         let extraDeviceOFilesBuildDirs = arguments.value(for: "extra-device-o-files-build-dirs", allowShort: false)
         let debugSymbols = !arguments.hasFlag(named: "no-debug-symbols", allowShort: false)
         let copyDSYM = debugSymbols && !arguments.hasFlag(named: "no-dsym", allowShort: false)
-        let useResourceCache = simulatorOnly && !arguments.hasFlag(named: "no-resource-cache", allowShort: false)
+        let useResourceCache = !deviceOnly && !arguments.hasFlag(named: "no-resource-cache", allowShort: false)
 
         let product: PackagePlugin.Product? = if let productName {
             context.package.products.first {
