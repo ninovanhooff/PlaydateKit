@@ -21,7 +21,7 @@ public extension Sound {
             format: SoundFormat,
             sampleRate: UInt32,
             byteCount: Int,
-            freeData: Bool = false
+            freeData: Bool
         ) {
             guard let pointer = sample.newSampleFromData.unsafelyUnwrapped(
                 data.assumingMemoryBound(to: UInt8.self),
